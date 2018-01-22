@@ -169,7 +169,7 @@ DataManager.extractMetadata = function(data) {
 
 DataManager.checkError = function() {
     if (DataManager._errorUrl) {
-        throw new Error('Failed to load: ' + DataManager._errorUrl);
+       // Error('Failed to load: ' + DataManager._errorUrl);
     }
 };
 
