@@ -169,7 +169,7 @@ DataManager.extractMetadata = function(data) {
 
 DataManager.checkError = function() {
     if (DataManager._errorUrl) {
-       // Error('Failed to load: ' + DataManager._errorUrl);
+        throw new Error('Failed to load: ' + DataManager._errorUrl);
     }
 };
 
@@ -462,7 +462,7 @@ DataManager.extractSaveContents = function(contents) {
 // The static class that manages the configuration data.
 
 function ConfigManager() {
-
+    throw new Error('This is a static class');
 }
 
 ConfigManager.alwaysDash        = false;
@@ -565,7 +565,7 @@ ConfigManager.readVolume = function(config, name) {
 // The static class that manages storage for saving game data.
 
 function StorageManager() {
-
+    throw new Error('This is a static class');
 }
 
 StorageManager.save = function(savefileId, json) {
@@ -787,7 +787,7 @@ StorageManager.webStorageKey = function(savefileId) {
 // The static class that loads images, creates bitmap objects and retains them.
 
 function ImageManager() {
-
+    throw new Error('This is a static class');
 }
 
 ImageManager.cache = new CacheMap(ImageManager);
@@ -1098,7 +1098,7 @@ ImageManager.clearRequest = function(){
 // The static class that handles BGM, BGS, ME and SE.
 
 function AudioManager() {
-
+    throw new Error('This is a static class');
 }
 
 AudioManager._masterVolume   = 1;   // (min: 0, max: 1)
@@ -1509,7 +1509,7 @@ AudioManager.checkErrors = function() {
 
 AudioManager.checkWebAudioError = function(webAudio) {
     if (webAudio && webAudio.isError()) {
-
+        throw new Error('Failed to load: ' + webAudio.url);
     }
 };
 
@@ -1519,7 +1519,7 @@ AudioManager.checkWebAudioError = function(webAudio) {
 // The static class that plays sound effects defined in the database.
 
 function SoundManager() {
-
+    throw new Error('This is a static class');
 }
 
 SoundManager.preloadImportantSounds = function() {
@@ -1643,7 +1643,7 @@ SoundManager.playUseSkill = function() {
 // The static class that handles terms and messages.
 
 function TextManager() {
-
+    throw new Error('This is a static class');
 }
 
 TextManager.basic = function(basicId) {
@@ -1770,7 +1770,7 @@ Object.defineProperties(TextManager, {
 // The static class that manages scene transitions.
 
 function SceneManager() {
-
+    throw new Error('This is a static class');
 }
 
 /*
@@ -2819,7 +2819,7 @@ PluginManager.setup = function(plugins) {
 PluginManager.checkErrors = function() {
     var url = this._errorUrls.shift();
     if (url) {
-        //throw new Error('Failed to load: ' + url);
+        throw new Error('Failed to load: ' + url);
     }
 };
 
